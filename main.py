@@ -6,94 +6,46 @@ from typing import List, Optional
 from functools import reduce
 
 class Solution:
-    def subsetXORSum(self, nums: List[int]) -> int:
-        def dfs(index, current_xor):
-            if index == len(nums):
-                return current_xor
-            
-            include = dfs(index + 1, current_xor ^ nums[index])
-            exclude = dfs(index + 1, current_xor)
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        result = []
 
-            return include + exclude
-        
-        return dfs(0, 0)
-        
-        # BRUTE FORCE
-        # xor_sum = 0
+        for i in range(2**len(nums)):
+            subset = []
 
-        # # create for loop that starts from i = 1 and ends in 2^len(nums) - 1
-        # for i in range(1, 2**len(nums)):
-        #     # convert i into binary representation
-        #     binary = bin(i)[2:]
+            for j in range(len(nums)):
+                if (i >> j) & 1:
+                    subset.append(nums[j])
 
-        #     # each index in binary represenation represents the element in nums[index]
-        #     # if the index is set, include the element in nums[index] in the subset
-        #     temp = []
+            result.append(subset)
 
-        #     for index, bit in enumerate(binary[::-1]):
-        #         if bit == '1':
-        #             temp.append(nums[index])
-
-        #     # for each subset created, perform XOR
-        #     if len(temp) == 1:
-        #         temp = temp[0]
-        #     else:
-        #         temp = reduce(lambda x, y: x ^ y, temp)
-
-        #     xor_sum += temp
-        
-        # # return sum of subsets
-        # return xor_sum
+        return result
 
 
-print(Solution().subsetXORSum([5,1,6]))
-print('Expected: 28')
+print(Solution().subsets([1,2,3]))
+print('Expected: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]')
 
 """
-The XOR total of an array is defined as the bitwise XOR of all its elements, or 0 if the array is empty.
+Given an integer array nums of unique elements, return all possible 
+subsets
+ (the power set).
 
-For example, the XOR total of the array [2,5,6] is 2 XOR 5 XOR 6 = 1.
-Given an array nums, return the sum of all XOR totals for every subset of nums. 
-
-Note: Subsets with the same elements should be counted multiple times.
-
-An array a is a subset of an array b if a can be obtained from b by deleting some (possibly zero) elements of b.
+The solution set must not contain duplicate subsets. Return the solution in any order.
 
  
 
 Example 1:
 
-Input: nums = [1,3]
-Output: 6
-Explanation: The 4 subsets of [1,3] are:
-- The empty subset has an XOR total of 0.
-- [1] has an XOR total of 1.
-- [3] has an XOR total of 3.
-- [1,3] has an XOR total of 1 XOR 3 = 2.
-0 + 1 + 3 + 2 = 6
+Input: nums = [1,2,3]
+Output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
 Example 2:
 
-Input: nums = [5,1,6]
-Output: 28
-Explanation: The 8 subsets of [5,1,6] are:
-- The empty subset has an XOR total of 0.
-- [5] has an XOR total of 5.
-- [1] has an XOR total of 1.
-- [6] has an XOR total of 6.
-- [5,1] has an XOR total of 5 XOR 1 = 4.
-- [5,6] has an XOR total of 5 XOR 6 = 3.
-- [1,6] has an XOR total of 1 XOR 6 = 7.
-- [5,1,6] has an XOR total of 5 XOR 1 XOR 6 = 2.
-0 + 5 + 1 + 6 + 4 + 3 + 7 + 2 = 28
-Example 3:
-
-Input: nums = [3,4,5,6,7,8]
-Output: 480
-Explanation: The sum of all XOR totals for every subset is 480.
+Input: nums = [0]
+Output: [[],[0]]
  
 
 Constraints:
 
-1 <= nums.length <= 12
-1 <= nums[i] <= 20
+1 <= nums.length <= 10
+-10 <= nums[i] <= 10
+All the numbers of nums are unique.
 """
