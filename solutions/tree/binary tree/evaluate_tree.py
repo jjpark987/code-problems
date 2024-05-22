@@ -33,6 +33,7 @@ class TreeNode:
 
 class Solution:
     def evaluateTree(self, root: Optional[TreeNode]) -> bool:
+        # dfs
         if root.val == 0 or root.val == 1:
             return root.val == 1
         elif root.val == 2:

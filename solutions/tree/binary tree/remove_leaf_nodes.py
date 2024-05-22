@@ -55,6 +55,7 @@ class TreeNode:
 
 class Solution:
     def removeLeafNodes(self, root: Optional[TreeNode], target: int) -> Optional[TreeNode]:
+        # dfs
         # base case: if root is None, return None
         if not root:
             return

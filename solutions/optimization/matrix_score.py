@@ -7,6 +7,7 @@ from typing import List, Optional
 
 class Solution:
     def matrixScore(self, grid: List[List[int]]) -> int:
+        # greedy
         m, n = len(grid), len(grid[0])
         score = (1 << (n - 1)) * m
 

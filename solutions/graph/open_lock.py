@@ -4,6 +4,7 @@ from collections import deque
 
 class Solution:
     def openLock(self, deadends: List[str], target: str) -> int:
+        # bfs
         deadends = set(deadends)
         visted = set('0000')
         queue = deque([('0000', 0)])
