@@ -13,23 +13,25 @@ class Solution:
         count = Counter(hand)
 
         sorted_keys = sorted(count.keys())
-
+        print(sorted_keys)
+        print(count)
         for key in sorted_keys:
             if count[key] > 0:
                 start_count = count[key]
 
                 for i in range(key, key + groupSize):
+                    ipdb.set_trace()
                     if count[i] < start_count:
                         return False
-                    
                     count[i] -= start_count
+                    ipdb.set_trace()
         
         return True
 
 print(Solution().isNStraightHand(hand = [1,2,3,6,2,3,4,7,8], groupSize = 3))
 print('Expected: True')
-print(Solution().isNStraightHand(hand = [1,2,3,4,5], groupSize = 4))
-print('Expected: False')
+# print(Solution().isNStraightHand(hand = [1,2,3,4,5], groupSize = 4))
+# print('Expected: False')
 
 """
 Alice has some number of cards and she wants to rearrange the cards into groups so that each group is of size groupSize, and consists of groupSize consecutive cards.
