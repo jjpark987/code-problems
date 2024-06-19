@@ -8,10 +8,9 @@
             "type": "node",
             "request": "launch",
             "name": "TypeScript Debugger",
-            "args": ["./node/main.ts"],
-            "runtimeArgs": ["--nolazy", "-r", "./node/node_modules/ts-node/register"],
+            "args": ["./nodejs/main.ts"],
+            "runtimeArgs": ["--nolazy", "-r", "./nodejs/node_modules/ts-node/register"],
             "sourceMaps": true,
-            "cwd": "${workspaceRoot}",
         }
     ]
 }
