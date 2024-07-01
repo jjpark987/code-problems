@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from typing import List, Optional
+from typing import List
 # from collections import Counter, deque, defaultdict
 # from functools import reduce
 
