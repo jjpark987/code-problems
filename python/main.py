@@ -84,6 +84,7 @@ subcategory: binary trees
 difficulty: medium
 image_url_e1: /python/images/get_directions_e1.png
 image_url_e2: /python/images/get_directions_e2.png
+image_url_e3: none
 title: Step-By-Step Directions From a Binary Tree Node to Another
 
 description:
@@ -100,12 +101,10 @@ Return the step-by-step directions of the shortest path from node s to node t.
 
 Example 1:
 
-
 Input: root = [5,1,2,3,null,6,4], startValue = 3, destValue = 6
 Output: "UURL"
 Explanation: The shortest path is: 3 → 1 → 5 → 2 → 6.
 Example 2:
-
 
 Input: root = [2,1], startValue = 2, destValue = 1
 Output: "L"
