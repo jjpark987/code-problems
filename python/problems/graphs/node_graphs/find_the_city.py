@@ -13,8 +13,8 @@ print(Solution().findTheCity(n = 5, edges = [[0,1,2],[0,4,8],[1,2,3],[1,4,2],[2,
 print('Expected: 0')
 
 """
-category: 
-subcategory: 
+category: graphs
+subcategory: node graphs
 difficulty: medium
 image_url_e1: /python/images/find_the_city_e1.png
 image_url_e2: /python/images/find_the_city_e2.png
