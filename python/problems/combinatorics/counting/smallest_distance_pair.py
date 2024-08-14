@@ -3,7 +3,7 @@
 from typing import List
 from collections import defaultdict
 
-# time: O(n * 2^n), space: O(n)
+# time: O(nlog(n)), space: O(1)
 class Solution:
     def smallestDistancePair(self, nums: List[int], k: int) -> int:
         nums.sort()
