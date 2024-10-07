@@ -21,8 +21,8 @@ class CustomStack:
 # obj.increment(k,val)
 
 """
-category: 
-subcategory: 
+category: misc
+subcategory: instance methods
 difficulty: medium
 image_url_e1: none
 image_url_e2: none
