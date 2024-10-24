@@ -3,6 +3,7 @@
 class Solution:
     def maxUniqueSplit(self, s: str) -> int:
         pass
+        pass
 
 """
 category: manipulations
